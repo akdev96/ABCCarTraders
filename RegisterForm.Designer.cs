@@ -42,10 +42,10 @@
             iptRePassword = new TextBox();
             label7 = new Label();
             button1 = new Button();
+            chkShowPass = new CheckBox();
+            pictureBox1 = new PictureBox();
             button2 = new Button();
-            regShowPass = new CheckBox();
-            button3 = new Button();
-            button4 = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // iptFirstName
@@ -55,6 +55,7 @@
             iptFirstName.Name = "iptFirstName";
             iptFirstName.Size = new Size(175, 27);
             iptFirstName.TabIndex = 0;
+            iptFirstName.TextChanged += iptFirstName_TextChanged;
             // 
             // label1
             // 
@@ -134,6 +135,7 @@
             iptUsername.Name = "iptUsername";
             iptUsername.Size = new Size(175, 27);
             iptUsername.TabIndex = 6;
+            iptUsername.TextChanged += iptUsername_TextChanged;
             // 
             // label6
             // 
@@ -174,49 +176,39 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // chkShowPass
+            // 
+            chkShowPass.AutoSize = true;
+            chkShowPass.Location = new Point(404, 324);
+            chkShowPass.Name = "chkShowPass";
+            chkShowPass.Size = new Size(132, 24);
+            chkShowPass.TabIndex = 15;
+            chkShowPass.Text = "Show Password";
+            chkShowPass.UseVisualStyleBackColor = true;
+            chkShowPass.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.ImageLocation = "C:\\Users\\Dilan Fernando\\Downloads\\LMU\\car_traders_signup.png";
+            pictureBox1.InitialImage = null;
+            pictureBox1.Location = new Point(-1, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(387, 448);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 16;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // button2
             // 
             button2.AccessibleName = "registerBack";
             button2.Location = new Point(12, 12);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
-            button2.TabIndex = 14;
+            button2.TabIndex = 17;
             button2.Text = "< Back";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // regShowPass
-            // 
-            regShowPass.AutoSize = true;
-            regShowPass.Location = new Point(404, 324);
-            regShowPass.Name = "regShowPass";
-            regShowPass.Size = new Size(132, 24);
-            regShowPass.TabIndex = 15;
-            regShowPass.Text = "Show Password";
-            regShowPass.UseVisualStyleBackColor = true;
-            regShowPass.CheckedChanged += checkBox1_CheckedChanged;
-            // 
-            // button3
-            // 
-            button3.AccessibleName = "registerBack";
-            button3.Location = new Point(12, 271);
-            button3.Name = "button3";
-            button3.Size = new Size(202, 29);
-            button3.TabIndex = 16;
-            button3.Text = "Test Admin Portal Access";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // button4
-            // 
-            button4.AccessibleName = "registerBack";
-            button4.Location = new Point(12, 325);
-            button4.Name = "button4";
-            button4.Size = new Size(202, 29);
-            button4.TabIndex = 17;
-            button4.Text = "Test Customer Portal Access";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            button2.Click += button2_Click_1;
             // 
             // RegisterForm
             // 
@@ -224,10 +216,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             ControlBox = false;
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(regShowPass);
             Controls.Add(button2);
+            Controls.Add(pictureBox1);
+            Controls.Add(chkShowPass);
             Controls.Add(button1);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -245,6 +236,7 @@
             Name = "RegisterForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Register - ABC Car Traders";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -265,9 +257,8 @@
         private TextBox iptRePassword;
         private Label label7;
         private Button button1;
+        private CheckBox chkShowPass;
+        private PictureBox pictureBox1;
         private Button button2;
-        private CheckBox regShowPass;
-        private Button button3;
-        private Button button4;
     }
 }

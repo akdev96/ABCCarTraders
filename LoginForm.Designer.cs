@@ -102,6 +102,7 @@
             txb_userName.Name = "txb_userName";
             txb_userName.Size = new Size(219, 27);
             txb_userName.TabIndex = 4;
+            txb_userName.TextChanged += txb_userName_TextChanged;
             // 
             // btn_login
             // 
@@ -112,6 +113,7 @@
             btn_login.TabIndex = 5;
             btn_login.Text = "Login";
             btn_login.UseVisualStyleBackColor = true;
+            btn_login.Click += btn_login_Click;
             // 
             // lbl_password
             // 
