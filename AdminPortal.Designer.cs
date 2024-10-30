@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPortal));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             button9 = new Button();
@@ -36,19 +37,23 @@
             button6 = new Button();
             label1 = new Label();
             tabPage2 = new TabPage();
-            button5 = new Button();
+            iptRole = new ComboBox();
+            label29 = new Label();
+            iptId = new TextBox();
+            button10 = new Button();
+            textBox5 = new TextBox();
+            userAddBtn = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
             label12 = new Label();
-            textBox3 = new TextBox();
+            iptCreatedOn = new TextBox();
             label11 = new Label();
-            textBox2 = new TextBox();
             label10 = new Label();
             label6 = new Label();
-            textBox1 = new TextBox();
+            iptPasswd = new TextBox();
             label4 = new Label();
-            iptPassword = new TextBox();
+            iptRePasswd = new TextBox();
             label5 = new Label();
             iptUsername = new TextBox();
             label7 = new Label();
@@ -63,45 +68,40 @@
             tabPage3 = new TabPage();
             Cars = new TabControl();
             vehicles_tab = new TabPage();
-            label16 = new Label();
-            iptStockDate = new TextBox();
+            label28 = new Label();
+            ipt_vi_id = new TextBox();
             btnUploadImg = new Button();
             pictureBox1 = new PictureBox();
             label15 = new Label();
-            iptSalePrice = new TextBox();
+            ipt_vi_saleprice = new TextBox();
             label25 = new Label();
-            iptStockPrice = new TextBox();
+            ipt_vi_stockprice = new TextBox();
             label24 = new Label();
-            iptQuntity = new TextBox();
+            ipt_vi_quantity = new TextBox();
             label13 = new Label();
-            iptBodyType = new TextBox();
+            ipt_vi_bodytype = new TextBox();
             label23 = new Label();
-            iptYear = new TextBox();
+            ipt_vi_yom = new TextBox();
             btnAddV = new Button();
             btnClearV = new Button();
             btnUpdateV = new Button();
             btnDeleteV = new Button();
             label14 = new Label();
-            iptMileage = new TextBox();
+            ipt_vi_mileage = new TextBox();
             label18 = new Label();
-            iptCondition = new TextBox();
+            ipt_vi_condition = new TextBox();
             label19 = new Label();
-            iptChassieNo = new TextBox();
+            ipt_vi_chassieno = new TextBox();
             label20 = new Label();
-            iptModel = new TextBox();
+            ipt_vi_model = new TextBox();
             label21 = new Label();
-            iptBrand = new TextBox();
+            ipt_vi_brand = new TextBox();
             label22 = new Label();
             button4 = new Button();
             textBox4 = new TextBox();
-            dataGridView1 = new DataGridView();
+            vehicleDataGrid = new DataGridView();
             parts_tab = new TabPage();
-            tabPage4 = new TabPage();
-            tabPage5 = new TabPage();
-            tabPage6 = new TabPage();
-            tabPage7 = new TabPage();
-            button10 = new Button();
-            textBox5 = new TextBox();
+            richTextBox1 = new RichTextBox();
             label17 = new Label();
             textBox6 = new TextBox();
             button11 = new Button();
@@ -129,11 +129,8 @@
             button16 = new Button();
             textBox17 = new TextBox();
             dataGridView2 = new DataGridView();
-            richTextBox1 = new RichTextBox();
-            label28 = new Label();
-            textBox8 = new TextBox();
-            label29 = new Label();
-            textBox9 = new TextBox();
+            tabPage4 = new TabPage();
+            label50 = new Label();
             label37 = new Label();
             textBox10 = new TextBox();
             label38 = new Label();
@@ -168,7 +165,22 @@
             button22 = new Button();
             textBox29 = new TextBox();
             dataGridView3 = new DataGridView();
-            label50 = new Label();
+            tabPage5 = new TabPage();
+            label56 = new Label();
+            richTextBox2 = new RichTextBox();
+            button26 = new Button();
+            button25 = new Button();
+            button23 = new Button();
+            button24 = new Button();
+            button5 = new Button();
+            dataGridView4 = new DataGridView();
+            tabPage6 = new TabPage();
+            label55 = new Label();
+            tabPage7 = new TabPage();
+            label53 = new Label();
+            label52 = new Label();
+            label54 = new Label();
+            label51 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -177,13 +189,17 @@
             Cars.SuspendLayout();
             vehicles_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)vehicleDataGrid).BeginInit();
             parts_tab.SuspendLayout();
-            tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
+            tabPage6.SuspendLayout();
+            tabPage7.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -226,6 +242,7 @@
             button9.TabIndex = 4;
             button9.Text = "Reports";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button8
             // 
@@ -255,6 +272,7 @@
             button6.TabIndex = 1;
             button6.Text = "User Account Management";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // label1
             // 
@@ -265,27 +283,26 @@
             label1.Size = new Size(121, 32);
             label1.TabIndex = 0;
             label1.Text = "Overview";
-            label1.Click += label1_Click;
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(iptRole);
             tabPage2.Controls.Add(label29);
-            tabPage2.Controls.Add(textBox9);
+            tabPage2.Controls.Add(iptId);
             tabPage2.Controls.Add(button10);
             tabPage2.Controls.Add(textBox5);
-            tabPage2.Controls.Add(button5);
+            tabPage2.Controls.Add(userAddBtn);
             tabPage2.Controls.Add(button3);
             tabPage2.Controls.Add(button2);
             tabPage2.Controls.Add(button1);
             tabPage2.Controls.Add(label12);
-            tabPage2.Controls.Add(textBox3);
+            tabPage2.Controls.Add(iptCreatedOn);
             tabPage2.Controls.Add(label11);
-            tabPage2.Controls.Add(textBox2);
             tabPage2.Controls.Add(label10);
             tabPage2.Controls.Add(label6);
-            tabPage2.Controls.Add(textBox1);
+            tabPage2.Controls.Add(iptPasswd);
             tabPage2.Controls.Add(label4);
-            tabPage2.Controls.Add(iptPassword);
+            tabPage2.Controls.Add(iptRePasswd);
             tabPage2.Controls.Add(label5);
             tabPage2.Controls.Add(iptUsername);
             tabPage2.Controls.Add(label7);
@@ -305,15 +322,60 @@
             tabPage2.Text = "User & Account Management";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // iptRole
             // 
-            button5.Location = new Point(1205, 766);
-            button5.Name = "button5";
-            button5.Size = new Size(148, 48);
-            button5.TabIndex = 34;
-            button5.Text = "Add";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            iptRole.FormattingEnabled = true;
+            iptRole.Items.AddRange(new object[] { "customer", "admin" });
+            iptRole.Location = new Point(1416, 310);
+            iptRole.Name = "iptRole";
+            iptRole.Size = new Size(175, 36);
+            iptRole.TabIndex = 73;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(1379, 67);
+            label29.Name = "label29";
+            label29.Size = new Size(31, 28);
+            label29.TabIndex = 72;
+            label29.Text = "ID";
+            // 
+            // iptId
+            // 
+            iptId.AccessibleName = "InputFirstName";
+            iptId.Location = new Point(1416, 62);
+            iptId.Name = "iptId";
+            iptId.Size = new Size(175, 34);
+            iptId.TabIndex = 71;
+            // 
+            // button10
+            // 
+            button10.Font = new Font("Segoe UI", 11F);
+            button10.Location = new Point(960, 79);
+            button10.Name = "button10";
+            button10.Size = new Size(195, 40);
+            button10.TabIndex = 36;
+            button10.Text = "Search";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(8, 81);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(946, 34);
+            textBox5.TabIndex = 35;
+            // 
+            // userAddBtn
+            // 
+            userAddBtn.AccessibleName = "userAddBtn";
+            userAddBtn.Location = new Point(1205, 766);
+            userAddBtn.Name = "userAddBtn";
+            userAddBtn.Size = new Size(148, 48);
+            userAddBtn.TabIndex = 34;
+            userAddBtn.Text = "Add";
+            userAddBtn.UseVisualStyleBackColor = true;
+            userAddBtn.Click += button5_Click;
             // 
             // button3
             // 
@@ -323,6 +385,7 @@
             button3.TabIndex = 33;
             button3.Text = "Clear Data";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -332,6 +395,7 @@
             button2.TabIndex = 32;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -341,6 +405,7 @@
             button1.TabIndex = 31;
             button1.Text = "Delete";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label12
             // 
@@ -350,15 +415,14 @@
             label12.Size = new Size(185, 28);
             label12.TabIndex = 30;
             label12.Text = "Account Created on";
-            label12.Click += label12_Click;
             // 
-            // textBox3
+            // iptCreatedOn
             // 
-            textBox3.AccessibleName = "InputEmail";
-            textBox3.Location = new Point(1205, 409);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(386, 34);
-            textBox3.TabIndex = 29;
+            iptCreatedOn.AccessibleName = "InputEmail";
+            iptCreatedOn.Location = new Point(1205, 409);
+            iptCreatedOn.Name = "iptCreatedOn";
+            iptCreatedOn.Size = new Size(386, 34);
+            iptCreatedOn.TabIndex = 29;
             // 
             // label11
             // 
@@ -369,14 +433,6 @@
             label11.TabIndex = 28;
             label11.Text = "Role";
             // 
-            // textBox2
-            // 
-            textBox2.AccessibleName = "InputUsername";
-            textBox2.Location = new Point(1416, 312);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(175, 34);
-            textBox2.TabIndex = 27;
-            // 
             // label10
             // 
             label10.AutoSize = true;
@@ -386,7 +442,6 @@
             label10.Size = new Size(214, 32);
             label10.TabIndex = 26;
             label10.Text = "Change Password";
-            label10.Click += label10_Click;
             // 
             // label6
             // 
@@ -397,14 +452,14 @@
             label6.TabIndex = 25;
             label6.Text = "Password";
             // 
-            // textBox1
+            // iptPasswd
             // 
-            textBox1.AccessibleName = "InputPassword";
-            textBox1.Location = new Point(1205, 590);
-            textBox1.Name = "textBox1";
-            textBox1.PasswordChar = '*';
-            textBox1.Size = new Size(175, 34);
-            textBox1.TabIndex = 24;
+            iptPasswd.AccessibleName = "InputPassword";
+            iptPasswd.Location = new Point(1205, 590);
+            iptPasswd.Name = "iptPasswd";
+            iptPasswd.PasswordChar = '*';
+            iptPasswd.Size = new Size(175, 34);
+            iptPasswd.TabIndex = 24;
             // 
             // label4
             // 
@@ -415,14 +470,14 @@
             label4.TabIndex = 25;
             label4.Text = "Retype Password";
             // 
-            // iptPassword
+            // iptRePasswd
             // 
-            iptPassword.AccessibleName = "InputPassword";
-            iptPassword.Location = new Point(1404, 590);
-            iptPassword.Name = "iptPassword";
-            iptPassword.PasswordChar = '*';
-            iptPassword.Size = new Size(175, 34);
-            iptPassword.TabIndex = 24;
+            iptRePasswd.AccessibleName = "InputPassword";
+            iptRePasswd.Location = new Point(1404, 590);
+            iptRePasswd.Name = "iptRePasswd";
+            iptRePasswd.PasswordChar = '*';
+            iptRePasswd.Size = new Size(175, 34);
+            iptRePasswd.TabIndex = 24;
             // 
             // label5
             // 
@@ -501,10 +556,10 @@
             label3.Size = new Size(119, 32);
             label3.TabIndex = 3;
             label3.Text = "User Info";
-            label3.Click += label3_Click;
             // 
             // usersDataGrid
             // 
+            usersDataGrid.AccessibleName = "usersDataGrid";
             usersDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             usersDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             usersDataGrid.Location = new Point(8, 121);
@@ -512,7 +567,6 @@
             usersDataGrid.RowHeadersWidth = 51;
             usersDataGrid.Size = new Size(1154, 740);
             usersDataGrid.TabIndex = 2;
-            usersDataGrid.CellContentClick += usersDataGrid_CellContentClick;
             // 
             // label2
             // 
@@ -523,7 +577,6 @@
             label2.Size = new Size(76, 32);
             label2.TabIndex = 1;
             label2.Text = "Users";
-            label2.Click += label2_Click;
             // 
             // tabPage3
             // 
@@ -549,39 +602,37 @@
             // vehicles_tab
             // 
             vehicles_tab.Controls.Add(label28);
-            vehicles_tab.Controls.Add(textBox8);
-            vehicles_tab.Controls.Add(label16);
-            vehicles_tab.Controls.Add(iptStockDate);
+            vehicles_tab.Controls.Add(ipt_vi_id);
             vehicles_tab.Controls.Add(btnUploadImg);
             vehicles_tab.Controls.Add(pictureBox1);
             vehicles_tab.Controls.Add(label15);
-            vehicles_tab.Controls.Add(iptSalePrice);
+            vehicles_tab.Controls.Add(ipt_vi_saleprice);
             vehicles_tab.Controls.Add(label25);
-            vehicles_tab.Controls.Add(iptStockPrice);
+            vehicles_tab.Controls.Add(ipt_vi_stockprice);
             vehicles_tab.Controls.Add(label24);
-            vehicles_tab.Controls.Add(iptQuntity);
+            vehicles_tab.Controls.Add(ipt_vi_quantity);
             vehicles_tab.Controls.Add(label13);
-            vehicles_tab.Controls.Add(iptBodyType);
+            vehicles_tab.Controls.Add(ipt_vi_bodytype);
             vehicles_tab.Controls.Add(label23);
-            vehicles_tab.Controls.Add(iptYear);
+            vehicles_tab.Controls.Add(ipt_vi_yom);
             vehicles_tab.Controls.Add(btnAddV);
             vehicles_tab.Controls.Add(btnClearV);
             vehicles_tab.Controls.Add(btnUpdateV);
             vehicles_tab.Controls.Add(btnDeleteV);
             vehicles_tab.Controls.Add(label14);
-            vehicles_tab.Controls.Add(iptMileage);
+            vehicles_tab.Controls.Add(ipt_vi_mileage);
             vehicles_tab.Controls.Add(label18);
-            vehicles_tab.Controls.Add(iptCondition);
+            vehicles_tab.Controls.Add(ipt_vi_condition);
             vehicles_tab.Controls.Add(label19);
-            vehicles_tab.Controls.Add(iptChassieNo);
+            vehicles_tab.Controls.Add(ipt_vi_chassieno);
             vehicles_tab.Controls.Add(label20);
-            vehicles_tab.Controls.Add(iptModel);
+            vehicles_tab.Controls.Add(ipt_vi_model);
             vehicles_tab.Controls.Add(label21);
-            vehicles_tab.Controls.Add(iptBrand);
+            vehicles_tab.Controls.Add(ipt_vi_brand);
             vehicles_tab.Controls.Add(label22);
             vehicles_tab.Controls.Add(button4);
             vehicles_tab.Controls.Add(textBox4);
-            vehicles_tab.Controls.Add(dataGridView1);
+            vehicles_tab.Controls.Add(vehicleDataGrid);
             vehicles_tab.Location = new Point(4, 37);
             vehicles_tab.Name = "vehicles_tab";
             vehicles_tab.Padding = new Padding(3);
@@ -590,56 +641,57 @@
             vehicles_tab.Text = "Vehicles";
             vehicles_tab.UseVisualStyleBackColor = true;
             // 
-            // label16
+            // label28
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(1195, 514);
-            label16.Name = "label16";
-            label16.Size = new Size(106, 28);
-            label16.TabIndex = 68;
-            label16.Text = "Stock Date";
+            label28.AutoSize = true;
+            label28.Location = new Point(1574, 30);
+            label28.Name = "label28";
+            label28.Size = new Size(31, 28);
+            label28.TabIndex = 70;
+            label28.Text = "ID";
             // 
-            // iptStockDate
+            // ipt_vi_id
             // 
-            iptStockDate.AccessibleName = "InputEmail";
-            iptStockDate.Location = new Point(1195, 545);
-            iptStockDate.Name = "iptStockDate";
-            iptStockDate.Size = new Size(386, 34);
-            iptStockDate.TabIndex = 67;
+            ipt_vi_id.AccessibleName = "InputFirstName";
+            ipt_vi_id.Location = new Point(1611, 25);
+            ipt_vi_id.Name = "ipt_vi_id";
+            ipt_vi_id.Size = new Size(175, 34);
+            ipt_vi_id.TabIndex = 69;
             // 
             // btnUploadImg
             // 
-            btnUploadImg.Location = new Point(1614, 536);
+            btnUploadImg.Location = new Point(1611, 445);
             btnUploadImg.Name = "btnUploadImg";
             btnUploadImg.Size = new Size(172, 43);
             btnUploadImg.TabIndex = 66;
             btnUploadImg.Text = "Upload Image";
             btnUploadImg.UseVisualStyleBackColor = true;
+            btnUploadImg.Click += btnUploadImg_Click;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(1613, 355);
+            pictureBox1.Location = new Point(1197, 445);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(173, 167);
+            pictureBox1.Size = new Size(384, 222);
             pictureBox1.TabIndex = 65;
             pictureBox1.TabStop = false;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(1195, 429);
+            label15.Location = new Point(1510, 343);
             label15.Name = "label15";
             label15.Size = new Size(95, 28);
             label15.TabIndex = 64;
             label15.Text = "Sale Price";
             // 
-            // iptSalePrice
+            // ipt_vi_saleprice
             // 
-            iptSalePrice.AccessibleName = "InputEmail";
-            iptSalePrice.Location = new Point(1195, 460);
-            iptSalePrice.Name = "iptSalePrice";
-            iptSalePrice.Size = new Size(386, 34);
-            iptSalePrice.TabIndex = 63;
+            ipt_vi_saleprice.AccessibleName = "InputEmail";
+            ipt_vi_saleprice.Location = new Point(1510, 374);
+            ipt_vi_saleprice.Name = "ipt_vi_saleprice";
+            ipt_vi_saleprice.Size = new Size(276, 34);
+            ipt_vi_saleprice.TabIndex = 63;
             // 
             // label25
             // 
@@ -650,13 +702,13 @@
             label25.TabIndex = 62;
             label25.Text = "Stock Price";
             // 
-            // iptStockPrice
+            // ipt_vi_stockprice
             // 
-            iptStockPrice.AccessibleName = "InputEmail";
-            iptStockPrice.Location = new Point(1195, 374);
-            iptStockPrice.Name = "iptStockPrice";
-            iptStockPrice.Size = new Size(386, 34);
-            iptStockPrice.TabIndex = 61;
+            ipt_vi_stockprice.AccessibleName = "InputEmail";
+            ipt_vi_stockprice.Location = new Point(1195, 374);
+            ipt_vi_stockprice.Name = "ipt_vi_stockprice";
+            ipt_vi_stockprice.Size = new Size(280, 34);
+            ipt_vi_stockprice.TabIndex = 61;
             // 
             // label24
             // 
@@ -667,13 +719,13 @@
             label24.TabIndex = 60;
             label24.Text = "Quantity";
             // 
-            // iptQuntity
+            // ipt_vi_quantity
             // 
-            iptQuntity.AccessibleName = "InputUsername";
-            iptQuntity.Location = new Point(1406, 284);
-            iptQuntity.Name = "iptQuntity";
-            iptQuntity.Size = new Size(175, 34);
-            iptQuntity.TabIndex = 59;
+            ipt_vi_quantity.AccessibleName = "InputUsername";
+            ipt_vi_quantity.Location = new Point(1406, 284);
+            ipt_vi_quantity.Name = "ipt_vi_quantity";
+            ipt_vi_quantity.Size = new Size(175, 34);
+            ipt_vi_quantity.TabIndex = 59;
             // 
             // label13
             // 
@@ -684,13 +736,13 @@
             label13.TabIndex = 58;
             label13.Text = "Body Type";
             // 
-            // iptBodyType
+            // ipt_vi_bodytype
             // 
-            iptBodyType.AccessibleName = "InputUsername";
-            iptBodyType.Location = new Point(1195, 284);
-            iptBodyType.Name = "iptBodyType";
-            iptBodyType.Size = new Size(175, 34);
-            iptBodyType.TabIndex = 57;
+            ipt_vi_bodytype.AccessibleName = "InputUsername";
+            ipt_vi_bodytype.Location = new Point(1195, 284);
+            ipt_vi_bodytype.Name = "ipt_vi_bodytype";
+            ipt_vi_bodytype.Size = new Size(175, 34);
+            ipt_vi_bodytype.TabIndex = 57;
             // 
             // label23
             // 
@@ -701,13 +753,13 @@
             label23.TabIndex = 56;
             label23.Text = "Year";
             // 
-            // iptYear
+            // ipt_vi_yom
             // 
-            iptYear.AccessibleName = "InputLastName";
-            iptYear.Location = new Point(1611, 115);
-            iptYear.Name = "iptYear";
-            iptYear.Size = new Size(175, 34);
-            iptYear.TabIndex = 55;
+            ipt_vi_yom.AccessibleName = "InputLastName";
+            ipt_vi_yom.Location = new Point(1611, 115);
+            ipt_vi_yom.Name = "ipt_vi_yom";
+            ipt_vi_yom.Size = new Size(175, 34);
+            ipt_vi_yom.TabIndex = 55;
             // 
             // btnAddV
             // 
@@ -717,6 +769,7 @@
             btnAddV.TabIndex = 54;
             btnAddV.Text = "Add";
             btnAddV.UseVisualStyleBackColor = true;
+            btnAddV.Click += btnAddV_Click;
             // 
             // btnClearV
             // 
@@ -754,13 +807,13 @@
             label14.TabIndex = 48;
             label14.Text = "Mileage (KM)";
             // 
-            // iptMileage
+            // ipt_vi_mileage
             // 
-            iptMileage.AccessibleName = "InputUsername";
-            iptMileage.Location = new Point(1611, 284);
-            iptMileage.Name = "iptMileage";
-            iptMileage.Size = new Size(175, 34);
-            iptMileage.TabIndex = 47;
+            ipt_vi_mileage.AccessibleName = "InputUsername";
+            ipt_vi_mileage.Location = new Point(1611, 284);
+            ipt_vi_mileage.Name = "ipt_vi_mileage";
+            ipt_vi_mileage.Size = new Size(175, 34);
+            ipt_vi_mileage.TabIndex = 47;
             // 
             // label18
             // 
@@ -771,13 +824,13 @@
             label18.TabIndex = 43;
             label18.Text = "Condition";
             // 
-            // iptCondition
+            // ipt_vi_condition
             // 
-            iptCondition.AccessibleName = "InputUsername";
-            iptCondition.Location = new Point(1611, 192);
-            iptCondition.Name = "iptCondition";
-            iptCondition.Size = new Size(175, 34);
-            iptCondition.TabIndex = 42;
+            ipt_vi_condition.AccessibleName = "InputUsername";
+            ipt_vi_condition.Location = new Point(1611, 192);
+            ipt_vi_condition.Name = "ipt_vi_condition";
+            ipt_vi_condition.Size = new Size(175, 34);
+            ipt_vi_condition.TabIndex = 42;
             // 
             // label19
             // 
@@ -788,13 +841,13 @@
             label19.TabIndex = 41;
             label19.Text = "Chassie No";
             // 
-            // iptChassieNo
+            // ipt_vi_chassieno
             // 
-            iptChassieNo.AccessibleName = "InputEmail";
-            iptChassieNo.Location = new Point(1195, 192);
-            iptChassieNo.Name = "iptChassieNo";
-            iptChassieNo.Size = new Size(386, 34);
-            iptChassieNo.TabIndex = 40;
+            ipt_vi_chassieno.AccessibleName = "";
+            ipt_vi_chassieno.Location = new Point(1195, 192);
+            ipt_vi_chassieno.Name = "ipt_vi_chassieno";
+            ipt_vi_chassieno.Size = new Size(386, 34);
+            ipt_vi_chassieno.TabIndex = 40;
             // 
             // label20
             // 
@@ -805,13 +858,13 @@
             label20.TabIndex = 39;
             label20.Text = "Model";
             // 
-            // iptModel
+            // ipt_vi_model
             // 
-            iptModel.AccessibleName = "InputLastName";
-            iptModel.Location = new Point(1406, 115);
-            iptModel.Name = "iptModel";
-            iptModel.Size = new Size(175, 34);
-            iptModel.TabIndex = 38;
+            ipt_vi_model.AccessibleName = "";
+            ipt_vi_model.Location = new Point(1406, 115);
+            ipt_vi_model.Name = "ipt_vi_model";
+            ipt_vi_model.Size = new Size(175, 34);
+            ipt_vi_model.TabIndex = 38;
             // 
             // label21
             // 
@@ -822,13 +875,13 @@
             label21.TabIndex = 37;
             label21.Text = "Brand";
             // 
-            // iptBrand
+            // ipt_vi_brand
             // 
-            iptBrand.AccessibleName = "InputFirstName";
-            iptBrand.Location = new Point(1195, 115);
-            iptBrand.Name = "iptBrand";
-            iptBrand.Size = new Size(175, 34);
-            iptBrand.TabIndex = 36;
+            ipt_vi_brand.AccessibleName = "";
+            ipt_vi_brand.Location = new Point(1195, 115);
+            ipt_vi_brand.Name = "ipt_vi_brand";
+            ipt_vi_brand.Size = new Size(175, 34);
+            ipt_vi_brand.TabIndex = 36;
             // 
             // label22
             // 
@@ -857,15 +910,16 @@
             textBox4.Size = new Size(946, 34);
             textBox4.TabIndex = 4;
             // 
-            // dataGridView1
+            // vehicleDataGrid
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 60);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1154, 757);
-            dataGridView1.TabIndex = 3;
+            vehicleDataGrid.AccessibleName = "vehicleDataGrid";
+            vehicleDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            vehicleDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            vehicleDataGrid.Location = new Point(3, 60);
+            vehicleDataGrid.Name = "vehicleDataGrid";
+            vehicleDataGrid.RowHeadersWidth = 51;
+            vehicleDataGrid.Size = new Size(1154, 757);
+            vehicleDataGrid.TabIndex = 3;
             // 
             // parts_tab
             // 
@@ -897,101 +951,21 @@
             parts_tab.Controls.Add(button16);
             parts_tab.Controls.Add(textBox17);
             parts_tab.Controls.Add(dataGridView2);
-            parts_tab.Location = new Point(4, 37);
+            parts_tab.Location = new Point(4, 29);
             parts_tab.Name = "parts_tab";
             parts_tab.Padding = new Padding(3);
-            parts_tab.Size = new Size(1880, 820);
+            parts_tab.Size = new Size(1880, 828);
             parts_tab.TabIndex = 1;
             parts_tab.Text = "Parts";
             parts_tab.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // richTextBox1
             // 
-            tabPage4.Controls.Add(label50);
-            tabPage4.Controls.Add(label37);
-            tabPage4.Controls.Add(textBox10);
-            tabPage4.Controls.Add(label38);
-            tabPage4.Controls.Add(textBox18);
-            tabPage4.Controls.Add(button17);
-            tabPage4.Controls.Add(pictureBox3);
-            tabPage4.Controls.Add(label39);
-            tabPage4.Controls.Add(textBox19);
-            tabPage4.Controls.Add(label40);
-            tabPage4.Controls.Add(textBox20);
-            tabPage4.Controls.Add(label41);
-            tabPage4.Controls.Add(textBox21);
-            tabPage4.Controls.Add(label42);
-            tabPage4.Controls.Add(textBox22);
-            tabPage4.Controls.Add(label43);
-            tabPage4.Controls.Add(textBox23);
-            tabPage4.Controls.Add(button18);
-            tabPage4.Controls.Add(button19);
-            tabPage4.Controls.Add(button20);
-            tabPage4.Controls.Add(button21);
-            tabPage4.Controls.Add(label44);
-            tabPage4.Controls.Add(textBox24);
-            tabPage4.Controls.Add(label45);
-            tabPage4.Controls.Add(textBox25);
-            tabPage4.Controls.Add(label46);
-            tabPage4.Controls.Add(textBox26);
-            tabPage4.Controls.Add(label47);
-            tabPage4.Controls.Add(textBox27);
-            tabPage4.Controls.Add(label48);
-            tabPage4.Controls.Add(textBox28);
-            tabPage4.Controls.Add(label49);
-            tabPage4.Controls.Add(button22);
-            tabPage4.Controls.Add(textBox29);
-            tabPage4.Controls.Add(dataGridView3);
-            tabPage4.Location = new Point(4, 39);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1894, 867);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "Order Management";
-            tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            tabPage5.Location = new Point(4, 39);
-            tabPage5.Name = "tabPage5";
-            tabPage5.Size = new Size(1894, 867);
-            tabPage5.TabIndex = 4;
-            tabPage5.Text = "Reports";
-            tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            tabPage6.Location = new Point(4, 39);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Size = new Size(1894, 867);
-            tabPage6.TabIndex = 5;
-            tabPage6.Text = "Settings";
-            tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            tabPage7.Location = new Point(4, 39);
-            tabPage7.Name = "tabPage7";
-            tabPage7.Size = new Size(1894, 867);
-            tabPage7.TabIndex = 6;
-            tabPage7.Text = "About";
-            tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            button10.Font = new Font("Segoe UI", 11F);
-            button10.Location = new Point(960, 79);
-            button10.Name = "button10";
-            button10.Size = new Size(195, 40);
-            button10.TabIndex = 36;
-            button10.Text = "Search";
-            button10.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(8, 81);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(946, 34);
-            textBox5.TabIndex = 35;
+            richTextBox1.Location = new Point(1192, 281);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(386, 120);
+            richTextBox1.TabIndex = 101;
+            richTextBox1.Text = "";
             // 
             // label17
             // 
@@ -1228,48 +1202,59 @@
             dataGridView2.Size = new Size(1154, 757);
             dataGridView2.TabIndex = 69;
             // 
-            // richTextBox1
+            // tabPage4
             // 
-            richTextBox1.Location = new Point(1192, 281);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(386, 120);
-            richTextBox1.TabIndex = 101;
-            richTextBox1.Text = "";
+            tabPage4.Controls.Add(label50);
+            tabPage4.Controls.Add(label37);
+            tabPage4.Controls.Add(textBox10);
+            tabPage4.Controls.Add(label38);
+            tabPage4.Controls.Add(textBox18);
+            tabPage4.Controls.Add(button17);
+            tabPage4.Controls.Add(pictureBox3);
+            tabPage4.Controls.Add(label39);
+            tabPage4.Controls.Add(textBox19);
+            tabPage4.Controls.Add(label40);
+            tabPage4.Controls.Add(textBox20);
+            tabPage4.Controls.Add(label41);
+            tabPage4.Controls.Add(textBox21);
+            tabPage4.Controls.Add(label42);
+            tabPage4.Controls.Add(textBox22);
+            tabPage4.Controls.Add(label43);
+            tabPage4.Controls.Add(textBox23);
+            tabPage4.Controls.Add(button18);
+            tabPage4.Controls.Add(button19);
+            tabPage4.Controls.Add(button20);
+            tabPage4.Controls.Add(button21);
+            tabPage4.Controls.Add(label44);
+            tabPage4.Controls.Add(textBox24);
+            tabPage4.Controls.Add(label45);
+            tabPage4.Controls.Add(textBox25);
+            tabPage4.Controls.Add(label46);
+            tabPage4.Controls.Add(textBox26);
+            tabPage4.Controls.Add(label47);
+            tabPage4.Controls.Add(textBox27);
+            tabPage4.Controls.Add(label48);
+            tabPage4.Controls.Add(textBox28);
+            tabPage4.Controls.Add(label49);
+            tabPage4.Controls.Add(button22);
+            tabPage4.Controls.Add(textBox29);
+            tabPage4.Controls.Add(dataGridView3);
+            tabPage4.Location = new Point(4, 39);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Size = new Size(1894, 867);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Order Management";
+            tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label28
+            // label50
             // 
-            label28.AutoSize = true;
-            label28.Location = new Point(1574, 30);
-            label28.Name = "label28";
-            label28.Size = new Size(31, 28);
-            label28.TabIndex = 70;
-            label28.Text = "ID";
-            label28.Click += label28_Click;
-            // 
-            // textBox8
-            // 
-            textBox8.AccessibleName = "InputFirstName";
-            textBox8.Location = new Point(1611, 25);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(175, 34);
-            textBox8.TabIndex = 69;
-            // 
-            // label29
-            // 
-            label29.AutoSize = true;
-            label29.Location = new Point(1379, 67);
-            label29.Name = "label29";
-            label29.Size = new Size(31, 28);
-            label29.TabIndex = 72;
-            label29.Text = "ID";
-            // 
-            // textBox9
-            // 
-            textBox9.AccessibleName = "InputFirstName";
-            textBox9.Location = new Point(1416, 62);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(175, 34);
-            textBox9.TabIndex = 71;
+            label50.AutoSize = true;
+            label50.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            label50.Location = new Point(8, 13);
+            label50.Name = "label50";
+            label50.Size = new Size(91, 32);
+            label50.TabIndex = 105;
+            label50.Text = "Orders";
             // 
             // label37
             // 
@@ -1565,15 +1550,164 @@
             dataGridView3.Size = new Size(1154, 757);
             dataGridView3.TabIndex = 71;
             // 
-            // label50
+            // tabPage5
             // 
-            label50.AutoSize = true;
-            label50.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label50.Location = new Point(8, 13);
-            label50.Name = "label50";
-            label50.Size = new Size(91, 32);
-            label50.TabIndex = 105;
-            label50.Text = "Orders";
+            tabPage5.Controls.Add(label56);
+            tabPage5.Controls.Add(richTextBox2);
+            tabPage5.Controls.Add(button26);
+            tabPage5.Controls.Add(button25);
+            tabPage5.Controls.Add(button23);
+            tabPage5.Controls.Add(button24);
+            tabPage5.Controls.Add(button5);
+            tabPage5.Controls.Add(dataGridView4);
+            tabPage5.Location = new Point(4, 39);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Size = new Size(1894, 867);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Reports";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // label56
+            // 
+            label56.AutoSize = true;
+            label56.Location = new Point(1072, 342);
+            label56.Name = "label56";
+            label56.Size = new Size(137, 28);
+            label56.TabIndex = 10;
+            label56.Text = "Custom Query";
+            // 
+            // richTextBox2
+            // 
+            richTextBox2.ForeColor = SystemColors.WindowFrame;
+            richTextBox2.Location = new Point(1072, 392);
+            richTextBox2.Name = "richTextBox2";
+            richTextBox2.Size = new Size(666, 280);
+            richTextBox2.TabIndex = 9;
+            richTextBox2.Text = resources.GetString("richTextBox2.Text");
+            // 
+            // button26
+            // 
+            button26.Location = new Point(1760, 342);
+            button26.Name = "button26";
+            button26.Size = new Size(126, 330);
+            button26.TabIndex = 8;
+            button26.Text = "Execute";
+            button26.UseVisualStyleBackColor = true;
+            // 
+            // button25
+            // 
+            button25.BackColor = Color.ForestGreen;
+            button25.ForeColor = SystemColors.ButtonFace;
+            button25.Location = new Point(1072, 750);
+            button25.Name = "button25";
+            button25.Size = new Size(814, 101);
+            button25.TabIndex = 7;
+            button25.Text = "Export Current Report";
+            button25.UseVisualStyleBackColor = false;
+            // 
+            // button23
+            // 
+            button23.Location = new Point(1493, 26);
+            button23.Name = "button23";
+            button23.Size = new Size(393, 101);
+            button23.TabIndex = 6;
+            button23.Text = "Completed Orders";
+            button23.UseVisualStyleBackColor = true;
+            // 
+            // button24
+            // 
+            button24.Location = new Point(1072, 164);
+            button24.Name = "button24";
+            button24.Size = new Size(393, 101);
+            button24.TabIndex = 5;
+            button24.Text = "Out of Stock Items";
+            button24.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(1072, 26);
+            button5.Name = "button5";
+            button5.Size = new Size(393, 101);
+            button5.TabIndex = 5;
+            button5.Text = "Pending Orders";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView4
+            // 
+            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView4.Location = new Point(3, 3);
+            dataGridView4.Name = "dataGridView4";
+            dataGridView4.RowHeadersWidth = 51;
+            dataGridView4.Size = new Size(1040, 861);
+            dataGridView4.TabIndex = 0;
+            // 
+            // tabPage6
+            // 
+            tabPage6.Controls.Add(label55);
+            tabPage6.Location = new Point(4, 39);
+            tabPage6.Name = "tabPage6";
+            tabPage6.Size = new Size(1894, 867);
+            tabPage6.TabIndex = 5;
+            tabPage6.Text = "Settings";
+            tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // label55
+            // 
+            label55.AutoSize = true;
+            label55.Location = new Point(746, 303);
+            label55.Name = "label55";
+            label55.Size = new Size(486, 28);
+            label55.TabIndex = 0;
+            label55.Text = "Please Purchase the Premium Version for more options";
+            // 
+            // tabPage7
+            // 
+            tabPage7.Controls.Add(label53);
+            tabPage7.Controls.Add(label52);
+            tabPage7.Controls.Add(label54);
+            tabPage7.Controls.Add(label51);
+            tabPage7.Location = new Point(4, 39);
+            tabPage7.Name = "tabPage7";
+            tabPage7.Size = new Size(1894, 867);
+            tabPage7.TabIndex = 6;
+            tabPage7.Text = "About";
+            tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // label53
+            // 
+            label53.AutoSize = true;
+            label53.Location = new Point(820, 314);
+            label53.Name = "label53";
+            label53.Size = new Size(311, 28);
+            label53.TabIndex = 0;
+            label53.Text = "E223739 - W Akila Dilan Fernando";
+            // 
+            // label52
+            // 
+            label52.AutoSize = true;
+            label52.Location = new Point(824, 239);
+            label52.Name = "label52";
+            label52.Size = new Size(307, 28);
+            label52.TabIndex = 0;
+            label52.Text = "Individual Coursework –(2023/24)";
+            // 
+            // label54
+            // 
+            label54.AutoSize = true;
+            label54.Location = new Point(897, 157);
+            label54.Name = "label54";
+            label54.Size = new Size(141, 28);
+            label54.TabIndex = 0;
+            label54.Text = "LMU - BEng SE";
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.Location = new Point(808, 201);
+            label51.Name = "label51";
+            label51.Size = new Size(339, 28);
+            label51.TabIndex = 0;
+            label51.Text = "CS6004ES –Application Development";
             // 
             // AdminPortal
             // 
@@ -1586,7 +1720,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminPortal";
             WindowState = FormWindowState.Maximized;
-            Load += AdminPortal_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -1598,15 +1731,22 @@
             vehicles_tab.ResumeLayout(false);
             vehicles_tab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)vehicleDataGrid).EndInit();
             parts_tab.ResumeLayout(false);
             parts_tab.PerformLayout();
-            tabPage4.ResumeLayout(false);
-            tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
+            tabPage6.ResumeLayout(false);
+            tabPage6.PerformLayout();
+            tabPage7.ResumeLayout(false);
+            tabPage7.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1628,7 +1768,7 @@
         private TabPage parts_tab;
         private Label label3;
         private Label label4;
-        private TextBox iptPassword;
+        private TextBox iptRePasswd;
         private Label label5;
         private TextBox iptUsername;
         private Label label7;
@@ -1639,47 +1779,44 @@
         private TextBox iptFirstName;
         private Label label10;
         private Label label6;
-        private TextBox textBox1;
+        private TextBox iptPasswd;
         private Label label12;
-        private TextBox textBox3;
+        private TextBox iptCreatedOn;
         private Label label11;
-        private TextBox textBox2;
         private Button button3;
         private Button button2;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView vehicleDataGrid;
         private Button button4;
         private TextBox textBox4;
-        private Button button5;
+        private Button userAddBtn;
         private Button btnAddV;
         private Button btnClearV;
         private Button btnUpdateV;
         private Button btnDeleteV;
         private Label label14;
-        private TextBox iptMileage;
+        private TextBox ipt_vi_mileage;
         private Label label18;
-        private TextBox iptCondition;
+        private TextBox ipt_vi_condition;
         private Label label19;
-        private TextBox iptChassieNo;
+        private TextBox ipt_vi_chassieno;
         private Label label20;
-        private TextBox iptModel;
+        private TextBox ipt_vi_model;
         private Label label21;
-        private TextBox iptBrand;
+        private TextBox ipt_vi_brand;
         private Label label22;
         private Button btnUploadImg;
         private PictureBox pictureBox1;
         private Label label15;
-        private TextBox iptSalePrice;
+        private TextBox ipt_vi_saleprice;
         private Label label25;
-        private TextBox iptStockPrice;
+        private TextBox ipt_vi_stockprice;
         private Label label24;
-        private TextBox iptQuntity;
+        private TextBox ipt_vi_quantity;
         private Label label13;
-        private TextBox iptBodyType;
+        private TextBox ipt_vi_bodytype;
         private Label label23;
-        private TextBox iptYear;
-        private Label label16;
-        private TextBox iptStockDate;
+        private TextBox ipt_vi_yom;
         private Button button7;
         private Button button6;
         private Button button8;
@@ -1715,9 +1852,9 @@
         private TextBox textBox17;
         private DataGridView dataGridView2;
         private Label label28;
-        private TextBox textBox8;
+        private TextBox ipt_vi_id;
         private Label label29;
-        private TextBox textBox9;
+        private TextBox iptId;
         private Label label37;
         private TextBox textBox10;
         private Label label38;
@@ -1753,5 +1890,19 @@
         private TextBox textBox29;
         private DataGridView dataGridView3;
         private Label label50;
+        private Label label55;
+        private Label label53;
+        private Label label52;
+        private Label label54;
+        private Label label51;
+        private Button button23;
+        private Button button24;
+        private Button button5;
+        private DataGridView dataGridView4;
+        private Button button25;
+        private Label label56;
+        private RichTextBox richTextBox2;
+        private Button button26;
+        private ComboBox iptRole;
     }
 }

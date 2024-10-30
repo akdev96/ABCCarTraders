@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox2.Text" xml:space="preserve">
+    <value>SELECT TOP (1000) [id]
+      ,[first_name]
+      ,[last_name]
+      ,[email]
+      ,[username]
+      ,[password]
+      ,[role]
+      ,[date_registered]
+      ,[status_is_active]
+  FROM [ABCCarTraders].[dbo].[users]</value>
+  </data>
 </root>
